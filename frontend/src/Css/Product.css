@@ -1,0 +1,50 @@
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+}
+.cardProduct {
+  width: 40%;
+  margin: 15px;
+  box-sizing: border-box;
+  float: left;
+  cursor: pointer;
+  padding-top: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  transition: 0.4s;
+}
+.cardProduct:hover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  transform: translate(0px, -8px);
+}
+.card-img {
+  max-width: 200px;
+  max-height: 200px;
+  object-fit: contain;
+  padding: 10px;
+  margin: 0 auto;
+  display: block;
+  border-bottom: 3px solid black;
+}
+.card-body {
+  height: 100%;
+}
+.cardBody h3 {
+  text-align: center;
+  font-size: 20px;
+  padding-top: 0 8px;
+}
+.cardBody h4 {
+  margin-top: 20px;
+  font-size: 15px;
+  padding-top: 0 8px;
+}
+.card-body h6 {
+  margin-top: 30px;
+  font-size: 23px;
+  color: orange;
+  float: left;
+}

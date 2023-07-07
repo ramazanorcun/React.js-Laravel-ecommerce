@@ -1,0 +1,65 @@
+
+.logo {
+  margin-left: 30px;
+    color: gray;
+  }
+  
+  .header {
+    width: 100%;
+    padding: 20px ;
+    background: rgb(245, 245, 245);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+  }
+ 
+  .header a {
+    font-size: 2em;
+    user-select: none;
+  }
+  .navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: rgb(52, 103, 180);
+    font-weight: 600;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: 0.5s;
+    
+  }
+  .navigation a:hover,
+  .navigation a:active {
+    color: #333;
+    
+  }
+ 
+  /*RESPONSİVE NAVBAR */
+  @media (max-width: 992px) {
+    .header a{
+      display: block;
+      justify-content: center;
+      align-items: center;
+    }
+  
+  }
+
+ .dropİtem{
+  margin-top:10px ;
+ }
+ .sepet{
+  margin-left: 20px;
+  margin-right: 10px;
+ }
+ .sepet:hover{
+  color: orange;
+ }
+ .sepet span{
+  margin-left: 10px;
+ }
+
+
+
+  
+  
+  
