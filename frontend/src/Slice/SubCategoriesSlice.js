@@ -49,6 +49,7 @@ export const updateSubCategories = createAsyncThunk(
 
       builder.addCase(addSubCategories.fulfilled, (state, action) => {
         state.push(action.payload);
+        console.log(action.payload);
       });
     
 

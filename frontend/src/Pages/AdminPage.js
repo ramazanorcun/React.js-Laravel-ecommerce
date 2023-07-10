@@ -1,14 +1,15 @@
 import React from "react";
 import "../Css/AdminPage.css";
-import AdminAddCategory from "../Components/AdminAddCategory";
-import AdminSubCategoryTable from "../Components/AdminAddSubCategory";
+import AdminCategory from "../Components/Admin/AdminCategory";
+import AdminSubCategory from "../Components/Admin/AdminSubCategory";
 
 function AdminPage() {
   return (
     <div>
       <div>
-        <AdminAddCategory />
-        <AdminSubCategoryTable />
+        <AdminCategory/>
+        <AdminSubCategory/>
+        
       </div>
     </div>
   );

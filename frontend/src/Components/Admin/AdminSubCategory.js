@@ -7,8 +7,9 @@ import {
   deleteSubCategories,
   getSubCategories,
   updateSubCategories,
-} from "../Slice/SubCategoriesSlice";
-import "../Css/AdminPage.css";
+} from "../../Slice/SubCategoriesSlice";
+import "../../Css/AdminPage.css";
+
 import { toast } from "react-toastify";
 
 

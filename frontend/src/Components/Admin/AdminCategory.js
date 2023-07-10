@@ -5,10 +5,10 @@ import {
   deleteCategories,
   getCategories,
   updateCategories,
-} from "../Slice/CategoriesSlice";
+} from "../../Slice/CategoriesSlice";
 import Accordion from "react-bootstrap/Accordion";
 import Form from "react-bootstrap/Form";
-import "../Css/AdminPage.css";
+import "../../Css/AdminPage.css";
 import { toast } from "react-toastify";
 
 function AdminAddCategory() {

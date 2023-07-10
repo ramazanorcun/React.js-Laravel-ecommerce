@@ -2,15 +2,17 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Form from "react-bootstrap/Form";
 import Accordion from "react-bootstrap/Accordion";
-import "../Css/AdminPage.css";
+import "../../Css/AdminPage.css";
 
-import { getSubCategories } from "../Slice/SubCategoriesSlice";
-import ProductCard from "./ProductCard";
-import { addProduct } from "../Slice/ProductSlice";
+import { getSubCategories } from "../../Slice/SubCategoriesSlice";
+import ProductCard from "../ProductCard";
+import { addProduct, deleteProduct } from "../../Slice/ProductSlice";
 
 const Product = () => {
   const dispatch = useDispatch();
   const subCategories = useSelector((state) => state.subCategory);
+  const products = useSelector((state) => state.product);
+
   const [formData, setFormData] = useState({
     sub_category_id: "",
     name: "",
@@ -19,6 +21,7 @@ const Product = () => {
     image: null,
   });
   const [isAccordionOpen, setİsAccordionOpen]=useState(false)
+  const [productDeleteId, setProductDeleteId]=useState();
 
   const handleInputChange = (event) => {
     if (event.target.name === "image") {
@@ -47,6 +50,10 @@ const Product = () => {
     dispatch(addProduct(data));
   };
 
+  const deleteProductClick=()=>{
+    dispatch(deleteProduct(productDeleteId))
+  }
+
   useEffect(() => {
     dispatch(getSubCategories());
   }, [dispatch]);
@@ -60,7 +67,7 @@ const Product = () => {
             <Accordion.Header
             onClick={() => setİsAccordionOpen(!isAccordionOpen)}
             >
-              Alt Kategori ekle
+              Ürün ekle
             </Accordion.Header>
             <Accordion.Body>
               <div className="form-group">
@@ -134,6 +141,28 @@ const Product = () => {
                     Ekle
                   </button>
                 </Form>
+                <div className="form-group">
+                  <label htmlFor="categorySil">Ürün sil</label>
+                  <Form.Select
+                    aria-label="Default select example"
+                    onChange={(e)=>setProductDeleteId(e.target.value)}
+                  >
+                    <option>Ürünler</option>
+                    {products.map((product,i) => (
+                      <option value={product.id} key={i}>
+                        {product.name}
+                      </option>
+                    ))}
+                  </Form.Select>
+                  <button
+                    id="catBtn"
+                    type="button"
+                    className="btn btn-danger"
+                    onClick={deleteProductClick}
+                  >
+                    Sil
+                  </button>
+                </div>
               </div>
             </Accordion.Body>
           </Accordion.Item>

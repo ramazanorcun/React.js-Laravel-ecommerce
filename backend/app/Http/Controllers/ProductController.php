@@ -47,13 +47,22 @@ class ProductController extends Controller
             $product -> image = $request -> image;
 
 
-            if($request->hasFile('image'))
-            {
-                $file=$request->file('image');
+            if ($request->hasFile('image')) {
+                $file = $request->file('image');
                 $extension = $file->getClientOriginalExtension();
-                $filename= time() .'.' .$extension;
-                $file->move(\public_path('Image'),$filename);
-                $product->image =''.$filename;
+                $filename = time() . '.' . $extension;
+
+                // Eski fotoğraf varsa silinir
+                if ($product->image) {
+                    $oldImagePath = public_path('Image') . '/' . $product->image;
+                    if (file_exists($oldImagePath)) {
+                        unlink($oldImagePath);
+                    }
+                }
+
+                // Yeni fotoğrafı kaydet
+                $file->move(public_path('Image'), $filename);
+                $product->image = $filename;
             }
 
             $product -> save();

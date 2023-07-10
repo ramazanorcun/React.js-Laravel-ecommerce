@@ -1,5 +1,5 @@
 import React from 'react'
-import AdminAddProduct from "../Components/AdminAddProduct";
+import AdminProduct from "../Components/Admin/AdminProduct";
 import { useSelector } from 'react-redux';
 
 const Product = () => {
@@ -8,7 +8,7 @@ const Product = () => {
   return (
     <div>
         {error && <div>{error}</div>}
-        <AdminAddProduct   />
+        <AdminProduct   />
         
     </div>
   )

@@ -14,6 +14,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { logout } from "../Slice/AuthSlice";
 
+
 function Header() {
   const dispatch = useDispatch();
   const userData = JSON.parse(localStorage.getItem("user"));
@@ -34,6 +35,7 @@ function Header() {
         <h2 href="#default" className="logo">
           Company Logo
         </h2>
+      
         <div className="navigation">
           <a className="active" href="#home">
             Home<span></span>
