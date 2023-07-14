@@ -9,12 +9,12 @@ import Header from "./Components/Header";
 import { useState } from "react";
 import AdminPage from "./Pages/AdminPage";
 import UserProfil from "./Pages/UserProfil";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import Product from "./Pages/Product";
 
 function App() {
-  const isAuthenticated = useSelector((state) => state.auth);
-  console.log(isAuthenticated);
+  // const isAuthenticated = useSelector((state) => state.auth);
+  // console.log(isAuthenticated);
   const [loginFlag, setLoginFlag] = useState(false);
   return (
     <div className="App">

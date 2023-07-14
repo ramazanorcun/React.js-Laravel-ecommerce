@@ -30,6 +30,9 @@ function Login(props ) {
       dispatch(login({ email, password }))
         .then(() => {
           Navigate("/MainPage");
+        }, reason=>{
+          console.log(reason); //error
+          alert('Kullanıcı adı veya şifre geçersiz')
         })
      
         .finally(() => setLoginFlag(!loginFlag));

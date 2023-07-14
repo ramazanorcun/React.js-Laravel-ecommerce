@@ -26,56 +26,40 @@ class ProductController extends Controller
      */
     public function create(Request $request)
     {
-
-        $validator = Validator::make($request->all(),[
+        $validator = Validator::make($request->all(), [
             'sub_category_id' => 'required',
             'name' => 'required',
             'price' => 'required',
             'description' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg',
         ]);
+
         if ($validator->fails()) {
             return response()->json(['error' => $validator->errors()], 400);
-        }
-        else
-        {
-            $product= new Product;
-            $product -> sub_category_id = $request -> sub_category_id;
-            $product -> name = $request -> name;
-            $product -> price = $request -> price;
-            $product -> description = $request -> description;
-            $product -> image = $request -> image;
-
+        } else {
+            $product = new Product;
+            $product->sub_category_id = $request->sub_category_id;
+            $product->name = $request->name;
+            $product->price = $request->price;
+            $product->description = $request->description;
 
             if ($request->hasFile('image')) {
                 $file = $request->file('image');
                 $extension = $file->getClientOriginalExtension();
                 $filename = time() . '.' . $extension;
 
-                // Eski fotoğraf varsa silinir
-                if ($product->image) {
-                    $oldImagePath = public_path('Image') . '/' . $product->image;
-                    if (file_exists($oldImagePath)) {
-                        unlink($oldImagePath);
-                    }
-                }
-
                 // Yeni fotoğrafı kaydet
                 $file->move(public_path('Image'), $filename);
                 $product->image = $filename;
             }
 
-            $product -> save();
+            $product->save();
             return response()->json([
-                'status'=>200,
-                'messages'=>$product,
+                'status' => 200,
+                'messages' => $product,
             ]);
-
         }
-
-
     }
-
 
 
     /**

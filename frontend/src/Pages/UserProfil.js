@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "../Css/UserProfil.css";
-import Siparisler from "../Components/Siparisler";
-import Favoriler from "../Components/Favoriler";
-import KullanıcıBilgileri from "../Components/KullanıcıBilgileri";
-import AdresBilgileri from "../Components/AdresBilgileri";
+import Siparisler from "../Components/User/Siparisler";
+import Favoriler from "../Components/User/Favoriler";
+import KullanıcıBilgileri from "../Components/User/KullanıcıBilgileri";
+import AdresBilgileri from "../Components/User/AdresBilgileri";
 
 function UserProfil() {
   const [name, setName] = useState("siparişlerim");
@@ -61,7 +61,7 @@ function UserProfil() {
               <a
                 href="#/"
                 name="kullanıcı bilgilerim"
-                onClick={() => handleMenuClick("KullanıcıBilgileri")}
+                onClick={() => handleMenuClick("Kullanıcı Bilgileri")}
               >
                 Kullanıcı Bilgilerim
               </a>
@@ -70,7 +70,7 @@ function UserProfil() {
               <a
                 href="#/"
                 name="adres bilgilerim"
-                onClick={() => handleMenuClick("AdresBilgileri")}
+                onClick={() => handleMenuClick("Adres Bilgileri")}
               >
                 Adres Bilgilerim
               </a>
@@ -82,10 +82,10 @@ function UserProfil() {
             <div id="card-title" className="card">
               {name}
             </div>
-            {currentPage === "Siparişlerim" && <Siparisler />}
-            {currentPage === "Favoriler" && <Favoriler />}
-            {currentPage === "KullanıcıBilgileri" && <KullanıcıBilgileri />}
-            {currentPage === "AdresBilgileri" && <AdresBilgileri />}
+            {currentPage === "Siparişlerim" && <Siparisler  />}
+            {currentPage === "Favoriler" && <Favoriler  />}
+            {currentPage === "Kullanıcı Bilgileri" && <KullanıcıBilgileri  />}
+            {currentPage === "Adres Bilgileri" && <AdresBilgileri />}
           </div>
         )}
         <div></div>

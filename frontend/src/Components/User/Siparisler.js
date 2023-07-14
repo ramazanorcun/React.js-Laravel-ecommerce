@@ -1,5 +1,5 @@
 import React from "react";
-import "../Css/Siparisler.css";
+import "../../Css/UserProfil.css";
 
 function Siparisler() {
   return (

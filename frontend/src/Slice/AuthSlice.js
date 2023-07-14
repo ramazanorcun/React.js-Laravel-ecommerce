@@ -43,7 +43,7 @@ export const login = createAsyncThunk(
         error.toString();
 
       thunkAPI.dispatch(setMessage(message));
-      console.log(message);
+    
 
     }
   }

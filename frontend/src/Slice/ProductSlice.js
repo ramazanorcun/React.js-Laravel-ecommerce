@@ -35,7 +35,8 @@ const productSlice = createSlice({
     });
 
     builder.addCase(addProduct.fulfilled, (state, action) => {
-      return [...state, action.payload];
+      state.push(action.payload);
+      
     });
     builder.addCase(deleteProduct.fulfilled, (state, action) => {
       let index= state.findIndex((product)=>product.id === action.payload.id);
@@ -46,50 +47,3 @@ const productSlice = createSlice({
 export const { setProducts } = productSlice.actions;
 const { reducer } = productSlice;
 export default reducer;
-
-// import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-// import {
-//   addProductService,
-//   getProductService,
-// } from "../Services/ProductService";
-
-// export const getProduct = createAsyncThunk("product", async () => {
-//   const response = await getProductService();
-//   console.log(response);
-//   return response;
-// });
-// export const addProduct = createAsyncThunk(
-//   'addProduct',
-//   async (data) => {
-//     const response = await addProductService(data);
-
-//     return response;
-//   }
-// );
-
-// const ProductSlice = createSlice({
-//   name: "products",
-//     initialState: {
-//       products:[],
-// },
-//     reducers: {
-//       setProduct: (state, action) => {
-//         return action.payload;
-//       },
-//     },
-//     extraReducers: (builder) => {
-//       builder.addCase(getProduct.fulfilled, (state, action) => {
-//         state.products = action.payload;
-//       });
-//       builder.addCase(addProduct.fulfilled, (state, action) => {
-//         state.products.push(action.payload);
-//         console.log(action.payload);
-//       });
-//       // ...
-//     },
-
-// });
-
-// export const { setProduct } = ProductSlice.actions;
-// const { reducer } = ProductSlice;
-// export default reducer;
