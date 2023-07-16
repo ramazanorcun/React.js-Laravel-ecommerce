@@ -5,7 +5,7 @@ export const getProductService = async () => {
     const response = await axios.get("http://127.0.0.1:8000/api/product");
     return response.data;
   } catch (error) {
-    throw new Error("Error fetching product");
+    throw new Error("Error fetching getproduct");
   }
 };
 export const addProductService = async (data) => {
@@ -14,7 +14,7 @@ export const addProductService = async (data) => {
 
     return response.data;
   } catch (error) {
-    throw new Error('Error fetching product');
+    throw new Error('Error fetching addproduct');
   }
 };
 export const deleteProductService = async (productId) => {
@@ -23,6 +23,6 @@ export const deleteProductService = async (productId) => {
 
     return response.data;
   } catch (error) {
-    throw new Error('Error fetching product');
+    throw new Error('Error fetching deleteproduct');
   }
 };

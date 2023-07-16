@@ -73,6 +73,11 @@ function Header() {
                   Main Page
                 </Dropdown.Item>
               )}
+              {userData.user_level == "0" && (
+                <Dropdown.Item className="dropİtem" href="/Product">
+                  Product Page
+                </Dropdown.Item>
+              )}
               {userData.user_level == "2" && (
                 <Dropdown.Item className="dropİtem" href="/UserProfil">
                   Kullanıcı Bilgilerim

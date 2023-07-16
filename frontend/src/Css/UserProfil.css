@@ -62,3 +62,10 @@
 #teslimEdilmedi{
     color: red;
 }
+.checkbox-container {
+    display: flex;
+  align-items: center;; /* İstediğiniz boşluk miktarını ayarlayın */
+}
+.checkboxTitle{
+    margin-left: 15px;
+}

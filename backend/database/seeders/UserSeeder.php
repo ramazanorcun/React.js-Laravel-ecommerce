@@ -13,6 +13,7 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
+        //php artisan db:seed --class=UserSeeder run seeder
         User::create([
             'name' => 'admin',
             'email' => 'admin@gmail.com',

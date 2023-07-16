@@ -7,7 +7,7 @@ export const getSubCategoriesService = async () => {
     const response = await axios.get('http://127.0.0.1:8000/api/subCategories');
     return response.data;
   } catch (error) {
-    throw new Error('Error fetching categories');
+    throw new Error('Error fetching getSubcategories');
   }
 };
 export const addSubCategoriesService = async (item) => {
@@ -16,7 +16,7 @@ export const addSubCategoriesService = async (item) => {
 
     return response.data;
   } catch (error) {
-    throw new Error('Error fetching categories');
+    throw new Error('Error fetching addSubcategories');
   }
 };
 export const deleteSubCategoriesService = async (subCategoryId) => {
@@ -25,7 +25,7 @@ export const deleteSubCategoriesService = async (subCategoryId) => {
 
     return response.data;
   } catch (error) {
-    throw new Error('Error fetching categories');
+    throw new Error('Error fetching deleteSubcategories');
   }
 };
 export const updateSubCategoriesService = async ({updateSubId,name}) => {
@@ -34,6 +34,6 @@ export const updateSubCategoriesService = async ({updateSubId,name}) => {
 
     return response.data;
   } catch (error) {
-    throw new Error('Error fetching categories');
+    throw new Error('Error fetching updateSubcategories');
   }
 };

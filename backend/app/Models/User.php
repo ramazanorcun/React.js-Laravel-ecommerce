@@ -24,10 +24,11 @@ class User extends Authenticatable implements JWTSubject
         'email',
         'password',
         'user_level',
-
-
     ];
-
+    public function getUser()
+    {
+        return $this->hasMany(Categories::class, 'id', 'user_id');
+    }
     /**
      * The attributes that should be hidden for serialization.
      *

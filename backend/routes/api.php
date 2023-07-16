@@ -6,6 +6,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\SubCategoriesController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserInformationController;
+
 
 
 
@@ -50,3 +52,8 @@ Route::get('product',[ProductController::class,'index']);
 Route::post('addProduct',[ProductController::class,'create']);
 Route::delete('deleteProduct/{id}',[ProductController::class,'destroy']);
 Route::put('updateProduct/{id}',[ProductController::class,'update']);
+
+Route::get('userİnformation/{userid}',[UserInformationController::class,'index']);
+Route::post('addUserInformation',[UserInformationController::class,'create']);
+Route::put('updateUserInformation/{id}',[UserInformationController::class,'update']);
+

@@ -21,7 +21,8 @@ function AdminAddCategory() {
   const [name, setName] = useState("");
   const [deleteName, setDeleteName] = useState();
   const [updateName, setUpdateName] = useState();
-console.log(categoryId);
+
+  
   //category Çekme
   useEffect(() => {
     dispatch(getCategories());
